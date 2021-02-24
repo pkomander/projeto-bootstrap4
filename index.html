@@ -17,9 +17,10 @@
 
   <!-- adicionando navbar -->
   <!-- navbar em posição fixa com a class fixed-top na tag nav fixed-top-->
+  <!-- bg-light aplica um background branco -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="#">fruta & fruto</a>
+      <a class=" fonte-titulo cor-especial" href="#">fruta & fruto</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -83,6 +84,7 @@
     </section>
 
 
+    <!-- bg-light aplica um backgound branco na pagina -->
     <section class="container-fluid bg-light" id="receitas">
       <div class="row justify-content-center">
         <!-- adicionando o card -->
@@ -145,7 +147,13 @@
 
   </main>
 
+  <footer class="bg-secondary p-3">
+    <p class="text-light m-0 text-center">contato: <a class="text-light"
+        href="mailto:email@frutafruto.com.br">email@frutafruto.com.br</a></p>
+  </footer>
+
   <!-- Modal -->
+  <!-- adicionando validação ao formulario -->
   <div class="modal fade" id="modal-contato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -156,36 +164,35 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </header>
-        <main class="modal-body">
+        <!-- pegando os valores do form pelo id="nome" e label.  -->
+        <!-- o campo principal do form que contem os campos deve ter o action method="POST" envio, name="formulario" -->
+        <main class="modal-body" action="" method="POST" name="formulario">
           <div class="form-group">
-            <label for="formGroupExampleInput">Nome completo</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira seu nome completo">
+            <label for="nome">Nome completo</label>
+            <input type="text" class="form-control" id="nome" placeholder="Insira seu nome completo" name="nome">
           </div>
 
           <form>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Endereço de e-mail</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+              <label for="email">Endereço de e-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" name="email">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Deixe seu comentario</label>
-              <textarea class="form-control" placeholder="Insira seu comentario" id="exampleFormControlTextarea1"
-                rows="3"></textarea>
+              <label for="texto">Deixe seu comentario</label>
+              <textarea class="form-control" placeholder="Insira seu comentario" id="texto"
+                rows="3" name="texto"></textarea>
             </div>
           </form>
 
         </main>
         <footer class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn botao-cor-especial">Enviar</button>
+          <button type="button" class="btn botao-cor-especial" name="submit" onclick="validar()">Enviar</button>
         </footer>
       </dialog>
     </div>
   </div>
 
-
-
-  <p>contato:<a href="mailto:email@frutafruto.com.br">email@frutafruto.com.br</a></p>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -196,7 +203,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-  <script src=""></script>
+  <script src="./form-validation.js"></script>
 
 </body>
 
